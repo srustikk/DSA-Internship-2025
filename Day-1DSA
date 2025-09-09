@@ -1,0 +1,70 @@
+# Day-1DSAintenship.py
+# Author: Srusti K.K
+# Date: 2025-08-24
+# Topic: Python Basics - Strings and Lists
+
+# ===============================
+# STRINGS
+# ===============================
+
+# Example string
+message = "Learning Python is Fun!"
+
+# Indexing
+print("First character:", message[0])        # L
+print("Fifth character:", message[4])        # n
+print("Last character:", message[-1])        # !
+
+# Slicing
+print("Substring (0:8):", message[0:8])      # Learning
+print("Substring (9:15):", message[9:15])    # Python
+print("Substring (16:):", message[16:])      # is Fun!
+
+# String Functions
+print("Lowercase:", message.lower())         # learning python is fun!
+print("Uppercase:", message.upper())         # LEARNING PYTHON IS FUN!
+print("Replace:", message.replace("Fun", "Awesome"))  # Learning Python is Awesome
+print("Count 'n':", message.count("n"))      # number of 'n'
+print("Does it start with 'Learn'?", message.startswith("Learn"))
+
+# Converting string to integer
+num = "456"
+print("Convert '456' to int:", int(num), type(int(num)))
+
+print("=" * 40)
+
+# ===============================
+# LISTS
+# ===============================
+
+# Example list
+numbers = [5, 15, 25, 35, 45]
+
+# Indexing & Slicing
+print("First element:", numbers[0])          # 5
+print("Third element:", numbers[2])          # 25
+print("Slice (1:4):", numbers[1:4])          # [15, 25, 35]
+
+# Nested list example
+data = ["apple", [10, 20], [30, 40]]
+print("Nested index data[1][0]:", data[1][0])  # 10
+
+# List Functions
+numbers.append(55)       # Add at end
+print("After append:", numbers)
+
+numbers.insert(1, 12)    # Insert at position 1
+print("After insert:", numbers)
+
+numbers.extend([65, 75])  # Extend list
+print("After extend:", numbers)
+
+numbers.remove(25)       # Remove 25
+print("After remove:", numbers)
+
+removed_item = numbers.pop()  # Remove last
+print("After pop:", numbers, "| Popped:", removed_item)
+
+# List concatenation
+extra_numbers = numbers + [85, 95]
+print("Concatenated List:", extra_numbers)
