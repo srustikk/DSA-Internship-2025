@@ -1,0 +1,220 @@
+#Day-2DSAintenship.py
+# Author: Srusti K.K
+# Date: 9/9/2025
+# 📌 Internship Day 2 – Python Notes (day2_python.py)
+# Topics Covered:
+# 1. Tuples & Functions in Tuples
+# 2. Type Conversion & Typecasting
+# 3. Looping (for loop, while loop)
+# 4. Conditional Statements (if, if-else, if-elif-else)
+# 5. Set Union
+# 6. Dictionary & Dictionary Methods
+# 7. Operators in Python
+# 8. Jump Statements (break, continue, pass)
+
+# ---------------------------------------------------------
+# 1. TUPLES & FUNCTIONS IN TUPLES
+# ---------------------------------------------------------
+
+# Tuple creation
+fruits = ("apple", "banana", "cherry", "apple")
+
+# Functions in tuples
+print("Length of tuple:", len(fruits))       # len()
+print("Count of 'apple':", fruits.count("apple"))  # count()
+print("Index of 'banana':", fruits.index("banana")) # index()
+
+# Tuple concatenation
+extra = ("mango", "grape")
+new_tuple = fruits + extra
+print("Concatenated tuple:", new_tuple)
+
+# ---------------------------------------------------------
+# 2. TYPE CONVERSION & TYPECASTING
+# ---------------------------------------------------------
+
+# Type Conversion (automatic by Python)
+x = 10     # int
+y = 2.5    # float
+z = x + y  # int converted to float automatically
+print("Type Conversion Example:", z, type(z))
+
+# Type Casting (manual conversion)
+a = "123"
+b = int(a)   # string to int
+c = float(b) # int to float
+print("Type Casting Example:", b, c)
+
+# ---------------------------------------------------------
+# 3. LOOPING
+# ---------------------------------------------------------
+
+# For loop
+print("For Loop Example:")
+for i in range(1, 6):
+    print(i)
+
+# While loop
+print("While Loop Example:")
+num = 1
+while num <= 5:
+    print(num)
+    num += 1
+
+# ---------------------------------------------------------
+# 4. CONDITIONAL STATEMENTS
+# ---------------------------------------------------------
+
+age = 18
+
+# Simple if
+if age >= 18:
+    print("You are an adult")
+
+# if-else
+if age < 18:
+    print("Minor")
+else:
+    print("Adult")
+
+# if-elif-else
+marks = 75
+if marks >= 90:
+    print("Grade: A")
+elif marks >= 75:
+    print("Grade: B")
+elif marks >= 50:
+    print("Grade: C")
+else:
+    print("Grade: Fail")
+
+# ---------------------------------------------------------
+# 5. SET UNION
+# ---------------------------------------------------------
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print("Union of sets:", set1.union(set2))
+
+# ---------------------------------------------------------
+# 6. DICTIONARY & METHODS
+# ---------------------------------------------------------
+
+student = {"name": "Srusti", "age": 22, "branch": "CSE"}
+
+print("Keys:", student.keys())
+print("Values:", student.values())
+print("Items:", student.items())
+print("Get method:", student.get("age"))
+student.update({"semester": 6})
+print("After update:", student)
+student.pop("age")
+print("After pop:", student)
+
+# ---------------------------------------------------------
+# 7. OPERATORS
+# ---------------------------------------------------------
+
+# Arithmetic Operators
+a, b = 5, 2
+print("Addition:", a + b)
+print("Division:", a / b)
+print("Floor Division:", a // b)
+print("Power:", a ** b)
+
+# Comparison Operators
+print("Is a > b?", a > b)
+
+# Logical Operators
+print("Logical AND:", (a > 1) and (b > 1))
+
+# Membership Operators
+print("'a' in 'apple'?", 'a' in 'apple')
+
+# Identity Operators
+x = [1, 2]
+y = [1, 2]
+print("x is y?", x is y)
+
+# ---------------------------------------------------------
+# 8. JUMP STATEMENTS
+# ---------------------------------------------------------
+
+print("Break Example:")
+for i in range(1, 6):
+    if i == 3:
+        break
+    print(i)
+
+print("Continue Example:")
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+
+print("Pass Example:")
+for i in range(1, 6):
+    if i == 3:
+        pass
+    print(i)
+
+# HomeWork of Day2DSAinternship
+# Python Program: Factorial and Fibonacci
+# Both Iterative and Recursive versions
+
+# ---------------------------
+# FACTORIAL
+# ---------------------------
+
+# Iterative Factorial
+def factorial_iterative(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+
+# Recursive Factorial
+def factorial_recursive(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial_recursive(n-1)
+
+# ---------------------------
+# FIBONACCI
+# ---------------------------
+
+# Iterative Fibonacci
+def fibonacci_iterative(n):
+    a, b = 0, 1
+    fib_seq = []
+    for _ in range(n):
+        fib_seq.append(a)
+        a, b = b, a + b
+    return fib_seq
+
+# Recursive Fibonacci
+def fibonacci_recursive(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        seq = fibonacci_recursive(n-1)
+        seq.append(seq[-1] + seq[-2])
+        return seq
+
+# ---------------------------
+# MAIN PROGRAM
+# ---------------------------
+if _name_ == "_main_":
+    num = 5
+    fib_count = 8
+
+    print("Factorial of", num, "using iterative method is:", factorial_iterative(num))
+    print("Factorial of", num, "using recursive method is:", factorial_recursive(num))
+
+    print("\nFibonacci sequence of", fib_count, "numbers (iterative):", fibonacci_iterative(fib_count))
+    print("Fibonacci sequence of", fib_count, "numbers (recursive):", fibonacci_recursive(fib_count))
