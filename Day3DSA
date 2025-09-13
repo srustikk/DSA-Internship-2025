@@ -1,0 +1,95 @@
+#Day-3DSAintenship.py
+# Author: Srusti K.K
+# Date: 10/9/2025
+# 📌 Internship Day 2 – Python Notes (day2_python.py)
+# Topics Covered:Multiplication Table +Even/odd counter ,Simple Average & Pass/Fail, Attendence Eligibility
+# Menu with Tuples
+
+#Multiplication Table+Even/odd counter (focus:int)
+
+n=int(input("enter a number for the table:"))
+
+print(f"\nMultiplication table for {n}")
+for i in range(1,11):
+    print(f"{n}*{i}={n*i}")
+    
+even_sum=0
+odd_sum=0
+for i in range(1, n+1):
+     if i%2==0:
+        even_sum=even_sum+i
+     else:
+        odd_sum=odd_sum+i
+        
+print("\nup to",n)
+print("Even sum:",even_sum)
+print("odd sum:",odd_sum)
+
+
+#simple averagee & Pass/Fail (focus on float concept)
+#Read marks as floats spliy by space
+
+raw=input("Enter the Marks(space-separated,eg-78.5,66,90)")
+parts=raw.split()
+
+total=0.0
+count=0
+for p in parts:
+    total=total+float(p)
+    count=count+1
+    avg=total/count if count>0 else 0.0
+    
+    print("Total:",total)
+    print("Average:",avg)
+    
+#Pass if average>=40(if+bool)
+is_pas=avg>=40.0
+if is_pas:
+    print("Result:PASS")
+else:
+    print("Result:Fail")
+
+#Attendence Eligilibity (focus on bool)
+
+students = int(input("How many students?"))
+for _ in range(students):
+    name=input("\nName:")
+    total=int(input("total classes:"))
+    present=int(input("present: "))
+    percent=(present/total)*100 if total>0 else 0.0
+    
+    eligible=percent>=75.0 #bool
+    print(f"{name}attendence={percent:.2f}%")
+    if eligible:
+        print("Eligible for exams:YES")
+    else:
+        print("Eligible for exam:NO")
+        
+        
+#Menu with Tuple(focus:tuple)
+        menu =[
+     ("tea",10.0),
+     ("coffe",15.0),
+     ("sandwitch",50.0),
+     ("juice",40.0),
+ ]
+        
+print("----MENU-----")
+for item in menu:
+    print(item[0],"-",item[1])
+    
+#choose by exact name
+choice=input("\nwhat would you like?")
+qty=int(input("quantity:"))
+price=0.0
+found=False
+for item in menu:
+    if item[0]==choice:
+        price=item[1]
+        found=True
+        
+    if found:
+        total=price*qty
+        print(f"Bill for {choice}x{qty}={total}")
+    else:
+        print("item not found")
