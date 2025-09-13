@@ -1,0 +1,153 @@
+# #Day-4DSAintenship.py
+# Author: Srusti K.K
+# Date: 11/9/2025
+# 📌 Internship Day 4– Python Notes (day4_python.py)
+# Topics Covered:For loop,For–else,While loop (normal + infinite),Reverse a number using while,
+# Jump statements (break, continue, pass),Nested loops,Prime number check (2–25),Functions (definition, call, return)
+#Types of arguments: Default argument,Positional argument,Keyword argument,Variable-length (*args, **kwargs)
+#Scoping (Global,Local)
+# For Loop
+
+print("For Loop Example:")
+for i in range(1, 10):
+    print(i)
+
+# For–Else
+print("\nFor–Else Example:")
+for count in range(6):
+    print(f"Iteration no. {count}")
+else:
+    print("Loop completed – else block executed")
+
+# For Loop with List
+print("\nFor Loop with List:")
+for i in ['a', 'b']:
+    print(i)
+else:
+    print("List loop finished")
+
+
+# While Loop
+
+print("\nWhile Loop Example:")
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# Reverse a Number
+print("\nReverse a Number Example:")
+num = 12345
+rev = 0
+while num != 0:
+    a = num % 10
+    rev = a + rev * 10
+    num = num // 10
+print("Reversed number:", rev)
+
+
+# Jump Statements
+
+print("\nJump Statements Example:")
+for i in "python":
+    if i == "h":
+        # Uncomment one at a time to test
+        # break
+        # continue
+        pass
+        print("Pass block executed")
+    print(i)
+
+
+# Nested Loops
+
+print("\nNested Loop Example:")
+a = [1, 2, 3]
+b = [4, 5, 6]
+for i in a:
+    for j in b:
+        print(i, j)
+
+
+# Prime Numbers (2–25)
+
+print("\nPrime Numbers between 2 and 25:")
+i = 2
+while i < 25:
+    j = 2
+    while j <= (i / j):
+        if not (i % j):
+            break
+        j = j + 1
+    if j > i / j:
+        print(i, "is a prime number")
+    i += 1
+
+
+# Functions
+
+print("\nFunctions Example:")
+
+def greet():
+    print("Greetings from function")
+
+greet()
+
+# Function with parameters
+def multiply(a, b):
+    print("Multiplication:", a * b)
+
+multiply(10, 20)
+
+# Function with return
+def add(a, b):
+    return a + b
+
+print("Addition:", add(10, 30))
+
+
+# Types of Arguments
+
+
+# Default Argument
+def default_arg(a=10):
+    print("Default Argument:", a)
+
+default_arg()
+default_arg(20)
+
+# Positional Argument
+def add_positional(a, b):
+    print("Positional Argument Sum:", a + b)
+
+add_positional(10, 20)
+
+# Keyword Argument
+def info(name, age):
+    print("Keyword Args:", name, age)
+
+info(name="Srusti", age=21)
+
+# Variable-length Arguments
+def var_args(*args):
+    print("Variable-length *args:", args)
+
+var_args(1, 2, 3, 4)
+
+def var_kwargs(**kwargs):
+    print("Variable-length **kwargs:", kwargs)
+
+var_kwargs(a=1, b=2, c=3)
+
+
+# Scoping
+
+print("\nScoping Example:")
+a = 10  # global variable
+
+def fun():
+    a = 20  # local variable
+    print("Inside function:", a)
+
+fun()
+print("Outside function (global):", a)
