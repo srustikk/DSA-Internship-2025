@@ -1,0 +1,58 @@
+# Day-5DSAintenship.py
+# Author: Srusti K.K
+# Date: 12/9/2025
+# 📌 Internship Day 5- Python Notes (day5_python.py)
+# Topics Covered:Rocak-Paper-Scissors  ,  Number Guessing
+
+
+#Rock-Paper-Scissors
+
+import random
+
+def winner(p,c):
+    if p == c: return "draw"
+    rules={"rock":"paper","scissors":"rock","paper":"scissors"}
+    return "player" if rules[p] == c else "computer"
+
+def game(best_of=5):
+    opts=["rock","paper","scissors"]
+    p_s=c_s=0
+    need=best_of//2+1
+    while p_s <need and c_s<need:
+        p=input("rock/paper/scissors:").strip().lower()
+        if p not in opts:print("Invalid.");continue
+        c=random.choice(opts)
+        print("Computer:",c)
+        w = winner(p,c)
+        if w == "player": p_s+=1;print("You win the round.")
+        elif w == "computer":c_s+=1;print("Computer wins the round.")
+        else: print("Draw.")
+        print(f"Score You:{p_s} Computer:{c_s}\n")
+    print("Winner:","You" if p_s>c_s else "Computer")
+
+game(best_of=5)
+
+
+#Number Guessing
+
+def play():
+    secret = random.randint(1, 100)
+    tries = 7
+    print("Guess the number (1-100). You have", tries, "tries.")
+    while tries > 0:
+        try:
+            g = int(input("Your guess: "))
+        except ValueError:
+            print("Enter a valid integer."); continue
+        if g == secret:
+            print("🎉 Correct!")
+            return
+        hint = "higher" if g < secret else "lower"
+        tries -= 1
+        print(f"Nope! Try {hint}. Tries left: {tries}")
+    print("Out of tries. The number was", secret)
+
+while True:
+    play()
+    if input("Play again? (y/n): ").lower() != 'y': break
+
